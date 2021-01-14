@@ -1,0 +1,7 @@
+---
+- name: checking patching validations
+  hosts: webservers
+  become: yes
+  tasks: 
+    - name: chcking uptime and hostname
+      shell: uptime >> /etc/ansible/validation.log && hostname --fqdn >> /etc/ansible/validation.log
